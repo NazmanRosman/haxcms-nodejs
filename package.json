@@ -10,7 +10,7 @@
   "scripts": {
     "dev:build": "npm run build && nodemon dist/app.js",
     "dev": "nodemon src/app.js",
-    "start": "open http://localhost:3000 && npm run dev HAXCMS_DISABLE_JWT_CHECKS",
+"start": "cmd.exe /C start chrome http://localhost:3000 && npm run dev HAXCMS_DISABLE_JWT_CHECKS",
     "build": "rm -rf dist && babel src --out-dir dist --copy-files --include-dotfiles && chmod 774 dist/local.js && chmod 774 dist/app.js && chmod 774 dist/cli.js",
     "release": "npm run build && commit-and-tag-version && git push --follow-tags origin main && npm publish",
     "haxcms-nodejs-cli": "haxcms-nodejs-cli"
@@ -45,11 +45,11 @@
   },
   "dependencies": {
     "archiver": "7.0.1",
-    "axios": "1.7.8",
+    "axios": "^1.9.0",
     "chokidar": "^4.0.3",
-    "cookie-parser": "1.4.6",
+    "cookie-parser": "^1.4.7",
     "dotenv": "16.4.5",
-    "express": "4.19.2",
+    "express": "^4.21.2",
     "fs-extra": "11.2.0",
     "git-interface": "2.1.2",
     "helmet": "7.1.0",
